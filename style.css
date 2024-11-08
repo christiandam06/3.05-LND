@@ -1,0 +1,73 @@
+body {
+    /* Poner de color "steelblue" el body */
+    background: steelblue; 
+    /* El color del texto y de las fichas de color "eee" */
+    color: #eee; 
+    /* El formato de la letra es "sans-serif" */
+    font-family: sans-serif;  
+    /* Alinea el texto y los elementos al centro */
+    text-align: center;
+  }
+ 
+  #tablero {
+    /* Le pone un margen por la parte de arriba al div tablero de 50px */
+    margin-top: 50px;
+    /* El colo de fondo del div se lo descarga del link */
+    background: url(http://img.freepik.com/free-photo/wooden-texture_1160-686.jpg?size=338&amp;ext=jpg);
+    /* El pone una sombra debajo del tablero, con un 60% de opacidad */
+    box-shadow: 0 10px 10px -6px rgba(0, 0, 0, .6);
+    /* Poner un borde con un radio de 3px */
+    border-radius: 3px;
+    /* Hace que los bordes de las celdas del div se unan en un solo borde compartido */
+    border-collapse: collapse;
+    /* Establece el alto del div */
+    height: 400px;
+    /* Define el ancho del div */
+    width: 400px;
+    /* Cambia la posision del div, en base a su padre, que en este caso es el h1 */
+    position: absolute;
+    /* Desplazamiento de la caja respecto al borde superior */
+    top: 30px;
+    /* Desplazamiento de la caja respecto al borde derecho */
+    right: 0;
+    /* Desplazamiento de la caja respecto al borde inferior */
+    bottom: 0;
+    /* Desplazamiento de la caja respecto al borde izquierdo */
+    left: 0;
+    /* Centrar el elemento automáticamente en su contenedor. */
+    margin: auto;
+ }
+
+  /*Aplica los estilos a todos los <div> que están dentro de otro <div> dentro de un elemento "tablero" */
+ 
+  #tablero div div {
+    /* Color del texto es "222"  */
+    color: #222;
+    /* Hace que los <div> "las fichas" se alineen uno al lado del otro en una fila, flotando hacia la izquierda */
+    float: left;
+    /* El tamaño de la fuente, en este caso de las fichasa */
+    font-size: 36px;
+    /* El pone un sombre a las letras, con un 60% de opcacidad */
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, .6);
+    /* Define el ancho de las fichas */
+    width: 50px;
+    /* Define el alto de las teclas */
+    height: 50px;
+  } 
+
+
+    /* Selecciona <div> que son hijos impares del tablero y, dentro de ellos, <div> que son hijos pares */
+    #tablero div:nth-child(odd) div:nth-child(even),
+    /* Selecciona <div> que son hijos pares del tablero y, dentro de ellos, <div> que son hijos impares */
+    #tablero div:nth-child(even) div:nth-child(odd) {
+      background: rgba(0, 0, 0, .4);
+    }
+  
+  /* Selecciona todos los <div> que están dentro de un <div> que es el séptimo hijo (o cualquier hijo posterior) 
+  dentro de un elemento con el ID "tablero" */
+  #tablero div:nth-child(n+7) div {
+    /* El color de las fichas en blanco */
+    color: #fff;
+    /* El pone un sombre a las letras, con un 60% de opcacidad */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
+  }
